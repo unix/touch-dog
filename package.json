@@ -1,0 +1,24 @@
+{
+  "name": "translate-touch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --config ./build/webpack.config.js --progress --watch",
+    "build": "rm -rf ./dist && webpack --config ./build/webpack.config.js --progress"
+  },
+  "author": "",
+  "license": "MIT",
+  "icons": {
+    "48": "images/icon_48.png"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.2.3",
+    "ts-loader": "^3.1.1",
+    "tslint": "^5.8.0",
+    "tslint-loader": "^3.5.3",
+    "typescript": "^2.6.1",
+    "webpack": "^3.8.1",
+    "webpack-merge": "^4.1.1"
+  }
+}

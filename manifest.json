@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "translate-touch",
+  "version": "0.1.1",
+  "default_locale": "en",
+  "author": "WittBulter",
+  "icons": {
+    "48": "assets/images/icon_48.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["app.js"]
+    }
+  ]
+}
