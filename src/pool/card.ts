@@ -12,7 +12,7 @@ export class Card {
     const title: string = `<p class="-touch-dog-title">${trans.text}</p>`
     const parts = trans.parts || []
     const list: string = parts.map(part =>
-      `<li><b>${part.part}</b>${part.means.map((t) => `<span>${t}</span>`).join(';')}</li>`)
+      `<li><b>${part.part}</b>${part.means.map((t) => `<span>${t};</span>`).join('')}</li>`)
       .join('')
     const ul: string = list ? `<ul class="-touch-dog-list">${list}</ul>` : ''
     return `

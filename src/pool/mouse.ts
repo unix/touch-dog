@@ -5,6 +5,7 @@ export class MouseHub {
   
   private text: string = ''
   private eventHub: EventHub
+  private touchStatus: string = 'select'       // 'close', 'select', 'zone'
   
   static strFilter(text: string): string {
     const str = text.trim()
@@ -13,15 +14,39 @@ export class MouseHub {
     return str
   }
   
-  constructor(eventHub: EventHub) {
+  constructor(eventHub: EventHub, defaultTouchStatus: string) {
+    this.touchStatus = defaultTouchStatus
     this.eventHub = eventHub
     this.init()
+    this.listenRuntime()
+  }
+  
+  private listenRuntime(): void {
+    chrome.runtime.onMessage.addListener(({ touchStatus }) => {
+      if (touchStatus) {
+        this.touchStatus = touchStatus
+      }
+    })
   }
   
   private init(): void {
-    document.addEventListener('mouseup', (e) => {
+    const handle: EventListener = (e: MouseEvent) =>
       this.updateText(findSelectdText(), { x: e.clientX, y: e.clientY })
+    document.addEventListener('mouseup', (e: MouseEvent) => {
+      this.touchStatus === 'select' && handle(e)
     })
+    document.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (this.touchStatus === 'close') return
+      if (e.keyCode !== 18 || this.touchStatus !== 'zone') return
+      const handle = (e: KeyboardEvent) => {
+        if (e.keyCode !== 18 && this.touchStatus !== 'select') return
+        this.touchStatus = 'zone'
+        document.removeEventListener('keyup', handle)
+      }
+      this.touchStatus = 'select'
+      document.addEventListener('keyup', handle)
+    })
+    
   }
   
   private updateText(text?: string, position?: any): void {
