@@ -12,7 +12,7 @@
     "emitDecoratorMetadata": true,
     "typeRoots": [
       "node_modules/@types",
-      "typings"
+      "src/typings"
     ]
   },
   "compileOnSave": false,
