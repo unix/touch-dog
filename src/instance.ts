@@ -1,4 +1,4 @@
-import { EventHub } from './event'
+import { EventHub } from './utils/event'
 
 
 export class Touch {
@@ -6,7 +6,11 @@ export class Touch {
   
   constructor(eventHub: EventHub) {
     this.hub = eventHub
+    this.hub.listen('updateText', (e, text) => {
+      console.log(text)
+    })
   }
+  
   
   
   

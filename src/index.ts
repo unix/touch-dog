@@ -1,10 +1,14 @@
 import { Touch } from './instance'
-import { EventHub } from './event'
+import { EventHub } from './utils/event'
+import { MouseHub } from './utils/mouse'
 
 
 ;(async() => {
   if (!document) return
-  new Touch(new EventHub())
+  const hub: EventHub = new EventHub()
+  new MouseHub(hub)
+  new Touch(hub)
+  
   
 })()
 

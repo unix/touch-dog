@@ -1,5 +1,4 @@
 
-export const text = (): string => {
+export const findSelectdText = (): string => {
   return `${window.getSelection()}`
 }
-
