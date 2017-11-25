@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const webpackMerge = require('webpack-merge')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const lintConfig = require('../tslint.json')
 const isDebug = process.env.DEBUG || false
 
@@ -48,6 +49,14 @@ module.exports = (async() => {
             configFile: path.resolve(__dirname, '../tsconfig.json'),
           }
         },
+        {
+          test: /\.html$/,
+          loader: 'html-loader',
+        },
+        {
+          test: /\.css$/,
+          loader: 'css-loader'
+        },
       ],
     },
   
@@ -84,6 +93,19 @@ module.exports = (async() => {
     },
     target: 'web',
   }
-  return [webpackMerge(base, client)]
+  const popup = {
+    entry: {
+      popup: path.resolve(__dirname, '../src/popup/index.ts'),
+    },
+    target: 'web',
+    
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, '../src/popup/index.html'),
+        filename: 'popup.html',
+      }),
+    ],
+  }
+  return [webpackMerge(base, client), webpackMerge(base, popup)]
 })()
 

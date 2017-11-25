@@ -1,16 +1,28 @@
 {
   "manifest_version": 2,
-  "name": "translate-touch",
+  "name": "touch-dog",
   "version": "0.1.1",
+  "description": "一个快速优雅的网页划词翻译工具。",
   "default_locale": "en",
   "author": "WittBulter",
   "icons": {
-    "48": "assets/images/icon_48.png"
+    "48": "assets/images/dog_38.png"
   },
+  "permissions": [
+    "storage",
+    "*://*.baidu.com/*"
+  ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
       "js": ["app.js"]
     }
-  ]
+  ],
+  "browser_action": {
+    "default_icon": {
+      "38": "assets/images/dog_38.png"
+    },
+    "default_title": "Touch Dog",
+    "default_popup": "./popup.html"
+  }
 }

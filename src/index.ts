@@ -1,10 +1,16 @@
 import { Touch } from './instance'
-import { EventHub } from './event'
-
+import { EventHub } from './pool/event'
+import { MouseHub } from './pool/mouse'
+import { Card } from './pool/card'
+import { store } from './utils/page'
 
 ;(async() => {
   if (!document) return
-  new Touch(new EventHub())
+  const { touchStatus } = await store.find('touchStatus') || { touchStatus: 'select' }
+  const hub: EventHub = new EventHub()
+  new MouseHub(hub, touchStatus)
+  new Card(hub)
+  new Touch(hub)
   
 })()
 

@@ -61,3 +61,6 @@ templates/target
 # output
 dist/
 
+# pem
+dist.crx
+dist.pem

@@ -1,0 +1,16 @@
+.-touch-dog {
+  width: 120px;
+  height: auto;
+  min-height: 200px;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+}
+
+.-touch-dog-logo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
