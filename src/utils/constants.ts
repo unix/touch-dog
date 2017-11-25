@@ -13,7 +13,7 @@ export const DEFAILT_HEADERS: any = {
 
 
 export const API: any = {
-  BAIDU: 'http://fanyi.baidu.com/v2transapi',
+  BAIDU: '//fanyi.baidu.com/v2transapi',
 }
 
 export const DEFAULT_QUERYS: any = {
@@ -58,7 +58,8 @@ export const STYLES: string = `
 }
 .-touch-dog-title {
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 23px;
+  margin: 20px 0 16px;
   color: #2f475f;
   display: block;
 }
@@ -82,6 +83,9 @@ export const STYLES: string = `
 .-touch-dog-list li span {
   padding-right: 5px;
 }
+
+
+
 
 
 
