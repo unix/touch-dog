@@ -40,14 +40,14 @@ export const STYLES: string = `
   width: 330px;
   height: auto;
   min-height: 95px;
-  background: #fff;
+  background: #fbfbfb;
   padding: 0px 15px 25px;
   position: fixed;
   font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   top: 0;
   left: 0;
-  background: linear-gradient(-45deg, transparent 12px, #fff 0);
+  background: linear-gradient(-45deg, transparent 12px, #fbfbfb 0);
   z-index: 100000;
 }
 
@@ -83,8 +83,6 @@ export const STYLES: string = `
 .-touch-dog-list li span {
   padding-right: 5px;
 }
-
-
 
 
 
