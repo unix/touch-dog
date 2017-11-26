@@ -16,7 +16,7 @@ module.exports = (async() => {
   
     devtool: isDebug ? 'source-map' : '',
   
-    target: 'node',
+    target: 'web',
   
     node: {
       __dirname: false,
@@ -91,18 +91,28 @@ module.exports = (async() => {
     entry: {
       app: path.resolve(__dirname, '../src/index.ts'),
     },
-    target: 'web',
   }
   const popup = {
     entry: {
       popup: path.resolve(__dirname, '../src/popup/index.ts'),
     },
-    target: 'web',
     
     plugins: [
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, '../src/popup/index.html'),
         filename: 'popup.html',
+      }),
+    ],
+  }
+  const options = {
+    entry: {
+      options: path.resolve(__dirname, '../src/options/index.ts'),
+    },
+    
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, '../src/options/index.html'),
+        filename: 'options.html',
       }),
     ],
   }
