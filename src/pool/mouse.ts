@@ -10,8 +10,7 @@ export class MouseHub {
   static strFilter(text: string): string {
     const str = text.trim()
     // reject chinese
-    if (/[\u4e00-\u9fa5]/.test(str)) return ''
-    return str
+    return /[\u4e00-\u9fa5]/.test(str) ? '' : str
   }
   
   constructor(eventHub: EventHub, defaultTouchStatus: string) {
@@ -23,15 +22,15 @@ export class MouseHub {
   
   private listenRuntime(): void {
     chrome.runtime.onMessage.addListener(({ touchStatus }) => {
-      if (touchStatus) {
-        this.touchStatus = touchStatus
-      }
+      if (!touchStatus) return
+      this.touchStatus = touchStatus
     })
   }
   
   private init(): void {
-    const handle: EventListener = (e: MouseEvent) =>
+    const handle: EventListener = (e: MouseEvent) => {
       this.updateText(findSelectdText(), { x: e.clientX, y: e.clientY })
+    }
     document.addEventListener('mouseup', (e: MouseEvent) => {
       this.touchStatus === 'select' && handle(e)
     })
@@ -51,7 +50,6 @@ export class MouseHub {
   
   private updateText(text?: string, position?: any): void {
     const str = MouseHub.strFilter(text)
-    if (!str) return
     if (!str || str === this.text) return
     this.text = str
     this.eventHub.dispath('updateText', { text: str, position })

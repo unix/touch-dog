@@ -8,19 +8,18 @@ export class Touch {
   
   constructor(eventHub: EventHub) {
     this.hub = eventHub
-    this.hub.listen('updateText', (e, translatorEvent: TranslatorEvent) => {
-      const { text } = translatorEvent
-      toEnglish(text).then(res => {
-        const next: TranslatorEvent = Object.assign({}, translatorEvent, res)
-        this.hub.dispath('showCard', next)
-      })
-      
+    this.hub.listen('updateText', (e, transEevent) => {
+      this.translate(transEevent)
     })
   }
   
-  
-  
-  
+  translate(transEevent: TranslatorEvent): void {
+    const { text } = transEevent
+    toEnglish(text).then(res => {
+      const next: TranslatorEvent = Object.assign({}, transEevent, res)
+      this.hub.dispath('showCard', next)
+    })
+  }
   
 }
 

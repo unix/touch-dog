@@ -1,10 +1,10 @@
 ;(async() => {
-  const updateIcon = (status: string) => {
+  const updateIcon = (status: string): void => {
     const path: string =  `assets/images/${status === 'close' ? 'dog-disabled_38' : 'dog_38'}.png`
     chrome.browserAction.setIcon({ path })
   }
   
-  const updateStatus = (index: number) => {
+  const updateStatus = (index: number): void => {
     const status: string = ['close', 'select', 'zone'][index]
     chrome.tabs.getAllInWindow((tabs) => {
       Array.from((<any>tabs)).forEach(tab => {
@@ -25,11 +25,13 @@
       updateStatus(index)
     })
   })
+  
   chrome.storage.sync.get('touchStatus', items => {
     const status = items.touchStatus || 'select'
     const i = ['close', 'select', 'zone'].findIndex(str => str === status)
     switchEl.classList.add('dont-use-animation')
     switchEl.classList.add(`step${i + 1}`)
+    
     const timer: any = setTimeout(() => {
       switchEl.classList.remove('dont-use-animation')
       clearTimeout(timer)

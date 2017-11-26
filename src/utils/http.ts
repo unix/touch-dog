@@ -21,9 +21,7 @@ export const $fetch = <T>(url, options: RequestInit = {}): Promise<T | any> => {
 
 export const queryParse = (...args: any[]): string => {
   const body: any = args.reduce((body, next) => Object.assign({}, body, next),{})
-  const query: string = Object.keys(body).reduce((query, next) => {
-    const q: string = `${next}=${body[next]}`
-    return query ? `${query}&${q}` : q
-  }, '')
+  const query: string = Object.keys(body).reduce((query, next) =>
+    `${query ? query + '&' : ''}${next}=${body[next]}`, '')
   return query
 }

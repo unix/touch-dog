@@ -16,11 +16,8 @@ export class Card {
       .join('')
     const ul: string = list ? `<ul class="-touch-dog-list">${list}</ul>` : ''
     return `
-      ${title}
-      ${ul}
-      <div class="-touch-dog-logo">${LOGO}</div>
-      <div class="paper"></div>
-    `
+      ${title}${ul}
+      <div class="-touch-dog-logo">${LOGO}</div><div class="paper"></div>`
   }
   
   constructor(eventHub: EventHub) {
@@ -32,12 +29,8 @@ export class Card {
     this.el = this.makeTemplate()
     document.body.appendChild(this.el)
     document.head.appendChild(this.makeStyles())
-    this.eventHub.listen('showCard', (e, trans) => {
-      this.update(trans)
-    })
-    this.el.addEventListener('click', (e: Event) => {
-      e.stopPropagation()
-    })
+    this.eventHub.listen('showCard', (e, trans) => this.update(trans))
+    this.el.addEventListener('click', (e: Event) => e.stopPropagation())
     this.el.addEventListener('mouseup', (e: Event) => e.stopPropagation())
   }
   
