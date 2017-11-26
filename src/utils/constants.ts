@@ -1,18 +1,19 @@
+export type DefaultOptionsType = { [key: string]: string }
 
-export const DEFAILT_REQUEST_OPTIONS: any = {
+export const DEFAILT_REQUEST_OPTIONS: DefaultOptionsType = {
   method: 'GET',
   mode: 'cors',
   cache: 'default',
 }
 
-export const DEFAILT_HEADERS: any = {
+export const DEFAILT_HEADERS: DefaultOptionsType = {
   'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
   'Accept': '*/*',
   'X-Requested-With': 'XMLHttpRequest',
 }
 
 
-export const API: any = {
+export const API: DefaultOptionsType = {
   BAIDU: '//fanyi.baidu.com/v2transapi',
 }
 
@@ -26,7 +27,7 @@ export const DEFAULT_QUERYS: any = {
   },
 }
 
-export const ErrorTips: any = {
+export const ErrorTips: DefaultOptionsType = {
   translationError: '翻译出现了错误',
   translationInterruption: '未找到合适的翻译',
 }
@@ -53,8 +54,10 @@ export const STYLES: string = `
 
 .-touch-dog-logo {
   position: absolute;
-  bottom: -7px;
+  bottom: -8px;
   left: 14px;
+  width: 100px;
+  height: 35px;
 }
 .-touch-dog-title {
   font-size: 16px;
@@ -83,9 +86,5 @@ export const STYLES: string = `
 .-touch-dog-list li span {
   padding-right: 5px;
 }
-
-
-
-
 
 `

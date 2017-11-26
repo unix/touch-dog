@@ -10,6 +10,7 @@ const findParts = (result: TranslatorResult) => {
   if (!parts || !parts.length) return []
   return parts
 }
+
 export const toEnglish = async(text: string) => {
   try {
     const result: TranslatorResult = await $fetch<TranslatorResult>(API.BAIDU, {

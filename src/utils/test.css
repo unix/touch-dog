@@ -1,16 +1,50 @@
 .-touch-dog {
-  width: 120px;
+  width: 330px;
   height: auto;
-  min-height: 200px;
-  background: #fff;
+  min-height: 95px;
+  background: #fbfbfb;
+  padding: 0px 15px 25px;
   position: fixed;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
   top: 0;
   left: 0;
+  background: linear-gradient(-45deg, transparent 12px, #fbfbfb 0);
   z-index: 100000;
 }
 
 .-touch-dog-logo {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -8px;
+  left: 14px;
+  width: 100px;
+  height: 35px;
 }
+.-touch-dog-title {
+  font-size: 16px;
+  line-height: 23px;
+  margin: 20px 0 16px;
+  color: #2f475f;
+  display: block;
+}
+.-touch-dog-list {
+  width: 100%;
+  list-style-type: none;
+  margin: 10px 0;
+  padding: 0;
+}
+.-touch-dog-list li {
+  font-size: 14px;
+  list-style-type: none;
+  margin-bottom: 5px;
+  color: #2f475f;
+}
+.-touch-dog-list li b {
+  font-weight: 400;
+  font-size: 15px;
+  padding-right: 10px;
+}
+.-touch-dog-list li span {
+  padding-right: 5px;
+}
+
