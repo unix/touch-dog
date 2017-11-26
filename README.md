@@ -3,7 +3,7 @@
 </p>
 
 
-> Touch Dog
+> Touch Dog     
 > 一个划词翻译浏览器插件，运行在 Chrome 中。
 
 ### 特性
