@@ -1,5 +1,10 @@
-## Touch Dog
-一个划词翻译浏览器插件，运行在 Chrome 中。
+<p align="center" height="300">
+<img src="https://github.com/DhyanaChina/simpler-paper/blob/master/.github/logo.png" align="center">
+</p>
+
+
+> Touch Dog
+> 一个划词翻译浏览器插件，运行在 Chrome 中。
 
 ### 特性
 - 极低的资源消耗，快速响应
