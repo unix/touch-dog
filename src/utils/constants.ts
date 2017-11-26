@@ -54,8 +54,10 @@ export const STYLES: string = `
 
 .-touch-dog-logo {
   position: absolute;
-  bottom: -7px;
+  bottom: -8px;
   left: 14px;
+  width: 100px;
+  height: 35px;
 }
 .-touch-dog-title {
   font-size: 16px;
