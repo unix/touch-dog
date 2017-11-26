@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "touch-dog",
-  "version": "0.1.1",
-  "description": "一个快速优雅的网页划词翻译工具。",
+  "name": "Touch Dog",
+  "version": "0.1.2",
+  "description": "一个快速优雅的网页划词翻译工具，准确实时的翻译选中文字。",
   "default_locale": "en",
   "author": "WittBulter",
   "homepage_url": "https://github.com/DhyanaChina/touch-dog",
