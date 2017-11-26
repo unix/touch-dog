@@ -5,6 +5,7 @@
   "description": "一个快速优雅的网页划词翻译工具。",
   "default_locale": "en",
   "author": "WittBulter",
+  "homepage_url": "https://github.com/DhyanaChina/touch-dog",
   "icons": {
     "48": "assets/images/dog_38.png"
   },
