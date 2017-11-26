@@ -1,5 +1,5 @@
 <p align="center" height="300">
-<img src="https://github.com/DhyanaChina/simpler-paper/blob/master/.github/logo.png" align="center">
+<img src="https://github.com/DhyanaChina/touch-dog/blob/master/.github/logo.png" align="center">
 </p>
 
 
