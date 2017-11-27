@@ -40,15 +40,16 @@ export const STYLES: string = `
 .-touch-dog {
   width: 330px;
   height: auto;
-  min-height: 95px;
-  background: #fbfbfb;
+  min-height: 100px;
+  background: #f7f7f7;
   padding: 0px 15px 25px;
+  border-radius: 1px;
   position: fixed;
   font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   top: 0;
   left: 0;
-  background: linear-gradient(-45deg, transparent 12px, #fbfbfb 0);
+  background: linear-gradient(-45deg, transparent 9px, #f7f7f7 0);
   z-index: 100000;
 }
 
@@ -62,14 +63,14 @@ export const STYLES: string = `
 .-touch-dog-title {
   font-size: 16px;
   line-height: 23px;
-  margin: 20px 0 16px;
-  color: #2f475f;
+  margin: 16px 0 5px;
+  color: #131a21;
   display: block;
 }
 .-touch-dog-list {
   width: 100%;
   list-style-type: none;
-  margin: 10px 0;
+  margin: 4px 0 16px;
   padding: 0;
 }
 .-touch-dog-list li {
@@ -86,5 +87,14 @@ export const STYLES: string = `
 .-touch-dog-list li span {
   padding-right: 5px;
 }
+
+
+
+
+
+
+
+
+
 
 `
