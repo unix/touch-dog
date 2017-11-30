@@ -2,15 +2,15 @@
   width: 330px;
   height: auto;
   min-height: 100px;
-  background: #f7f7f7;
-  padding: 0px 15px 25px;
-  border-radius: 1px;
+  background: #F6F9FB;
+  padding: 0px 15px 28px;
+  border-radius: 2px;
   position: fixed;
   font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   top: 0;
   left: 0;
-  background: linear-gradient(-45deg, transparent 9px, #f7f7f7 0);
+  background: linear-gradient(-45deg, transparent 5px, #F6F9FB 0);
   z-index: 100000;
 }
 
@@ -20,12 +20,13 @@
   left: 14px;
   width: 100px;
   height: 35px;
+  opacity: .3;
 }
 .-touch-dog-title {
   font-size: 16px;
   line-height: 23px;
-  margin: 16px 0 5px;
-  color: #131a21;
+  margin: 12px 0 5px;
+  color: #394c5d;
   display: block;
 }
 .-touch-dog-list {
@@ -38,7 +39,7 @@
   font-size: 14px;
   list-style-type: none;
   margin-bottom: 5px;
-  color: #2f475f;
+  color: #5e6d82;
 }
 .-touch-dog-list li b {
   font-weight: 400;
