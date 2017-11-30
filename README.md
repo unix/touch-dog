@@ -23,7 +23,7 @@
 
 
 ### 预览
-![preview image](https://github.com/DhyanaChina/touch-dog/blob/master/.github/preview.png)
+![preview image](http://static.wittsay.cc/touch-dog-show.png)
 
 
 
