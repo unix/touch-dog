@@ -50,7 +50,7 @@ export class MouseHub {
   
   private updateText(text?: string, position?: any): void {
     const str = MouseHub.strFilter(text)
-    if (!str || str === this.text) return
+    if (!str) return
     this.text = str
     this.eventHub.dispath('updateText', { text: str, position })
   }
