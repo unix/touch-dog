@@ -18,4 +18,7 @@ export type TranslatorEvent = {
   position: Position,
 }
 
-
+export type TranslateCache = {
+  source?: string,
+  target?: any
+}
