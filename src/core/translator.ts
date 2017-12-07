@@ -11,7 +11,7 @@ const findParts = (result: TranslatorResult) => {
   return parts
 }
 
-export const toEnglish = async(text: string) => {
+export const toEnglish = async(text: string): Promise<any> => {
   try {
     const result: TranslatorResult = await $fetch<TranslatorResult>(API.BAIDU, {
       method: 'post',
