@@ -1,5 +1,5 @@
 {
-  "name": "translate-touch",
+  "name": "touch-dog",
   "version": "0.2.1",
   "description": "",
   "main": "index.js",
@@ -13,6 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/DhyanaChina/touch-dog.git"
   },
+  "files": [
+    "dist"
+  ],
   "bugs": {
     "url": "https://github.com/DhyanaChina/touch-dog/issues"
   },
