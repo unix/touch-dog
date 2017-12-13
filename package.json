@@ -1,16 +1,21 @@
 {
-  "name": "translate-touch",
-  "version": "0.2.0",
+  "name": "touch-dog",
+  "version": "0.2.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack --config ./build/webpack.config.js --progress --watch",
-    "build": "rm -rf ./dist && webpack --config ./build/webpack.config.js --progress"
+    "build": "rm -rf ./dist && webpack --config ./build/webpack.config.js --progress",
+    "commit": "node_modules/commitizen/bin/commitizen init cz-conventional-changelog --save --save-exact",
+    "commitmsg": "commitlint -e $GIT_PARAMS"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DhyanaChina/touch-dog.git"
   },
+  "files": [
+    "dist"
+  ],
   "bugs": {
     "url": "https://github.com/DhyanaChina/touch-dog/issues"
   },
@@ -20,16 +25,26 @@
     "48": "images/icon_48.png"
   },
   "devDependencies": {
+    "@commitlint/config-angular": "^5.1.1",
     "@types/chrome": "0.0.54",
+    "commitizen": "^2.9.6",
+    "commitlint": "^5.2.5",
     "copy-webpack-plugin": "^4.2.3",
     "css-loader": "^0.28.7",
+    "cz-conventional-changelog": "^2.1.0",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
+    "husky": "^0.14.3",
     "ts-loader": "^3.1.1",
     "tslint": "^5.8.0",
     "tslint-loader": "^3.5.3",
     "typescript": "^2.6.1",
     "webpack": "^3.8.1",
     "webpack-merge": "^4.1.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
