@@ -36,10 +36,10 @@ export const toEnglish = async(text: string, token: string, gtk: string): Promis
 export const toEnglishV2 = async(text: string): Promise<string> => {
   try {
     const reg = /\<translation\>\s+\<\!\[CDATA\[([\s+\S+]*)\]\]/
-    const url = `${API.YOUDAO}&i=${text}`
+    const url = `${API.YOUDAO}&i=${encodeURI(text)}`
     const result: string = await $fetch(url, {}, 'text')
     if (!result) return ErrorTips.translationError
-    console.log(result, result.match(reg))
+    
     const [, ch] = result.match(reg)
     if (!ch) return ErrorTips.translationInterruption
     return ch
