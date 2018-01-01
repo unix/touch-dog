@@ -1,4 +1,4 @@
-import { $fetch, queryParse } from '../utils/http'
+import { $fetch, makeSignCode, queryParse } from '../utils/http'
 import { API, DEFAULT_QUERYS, ErrorTips } from '../utils/constants'
 import { TranslatorResult } from '../typings/touch-dog'
 
@@ -11,11 +11,16 @@ const findParts = (result: TranslatorResult) => {
   return parts
 }
 
-export const toEnglish = async(text: string): Promise<any> => {
+export const toEnglish = async(text: string, token: string, gtk: string): Promise<any> => {
   try {
+    const sign: string = makeSignCode(text, gtk)
     const result: TranslatorResult = await $fetch<TranslatorResult>(API.BAIDU, {
       method: 'post',
-      body: queryParse(DEFAULT_QUERYS.BAIDU, { query: text }),
+      body: queryParse(DEFAULT_QUERYS.BAIDU, {
+        query: encodeURIComponent(text),
+        sign,
+        token,
+      }),
     })
     if (!result || !result.trans_result) return ErrorTips.translationError
     const data: any = result.trans_result.data
