@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Touch Dog",
   "short_name": "Touch Dog",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "一个快速优雅的网页划词翻译工具，准确实时的翻译选中文字。",
   "default_locale": "en",
   "author": "WittBulter",
