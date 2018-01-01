@@ -44,7 +44,7 @@ export const STYLES: string = `
 .-touch-dog {
   width: 330px;
   height: auto;
-  min-height: 100px;
+  min-height: 90px;
   background: #F6F9FB;
   padding: 0px 15px 28px;
   border-radius: 2px;
@@ -92,9 +92,6 @@ export const STYLES: string = `
 .-touch-dog-list li span {
   padding-right: 5px;
 }
-
-
-
 
 
 
