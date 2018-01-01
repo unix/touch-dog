@@ -22,7 +22,7 @@ export const DEFAULT_QUERYS: any = {
     from: 'en',
     to: 'zh',
     query: '',
-    transtype: 'realtime',
+    transtype: 'translang',
     simple_means_flag: 3,
   },
 }
@@ -30,6 +30,7 @@ export const DEFAULT_QUERYS: any = {
 export const ErrorTips: DefaultOptionsType = {
   translationError: '翻译出现了错误',
   translationInterruption: '未找到合适的翻译',
+  tokenError: '查找鉴权信息失败',
 }
 
 export const LOGO: string = `
