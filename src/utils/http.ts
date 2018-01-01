@@ -6,9 +6,10 @@ const makeInit = (options:any = {}): RequestInit => {
   return Object.assign({}, DEFAILT_REQUEST_OPTIONS, options, { headers })
 }
 
-export const $fetch = <T>(url, options: RequestInit = {}, filterMethod: string = 'json'):
+export const $fetch = <T>(url, options: any = {}, filterMethod: string = 'json'):
 Promise<T | any> => {
   const init: RequestInit = makeInit(options)
+  
   return new Promise((resolve, reject) => {
     fetch(url, init)
     .then(res => {

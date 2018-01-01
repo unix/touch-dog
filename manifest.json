@@ -12,7 +12,8 @@
   },
   "permissions": [
     "storage",
-    "*://*.baidu.com/*"
+    "*://*.baidu.com/*",
+    "*://*.youdao.com/*"
   ],
   "content_scripts": [
     {

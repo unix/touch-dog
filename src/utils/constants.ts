@@ -9,12 +9,15 @@ export const DEFAILT_REQUEST_OPTIONS: DefaultOptionsType = {
 export const DEFAILT_HEADERS: DefaultOptionsType = {
   'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
   'Accept': '*/*',
+  'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7',
+  'Accept-Encoding': 'gzip, deflate',
   'X-Requested-With': 'XMLHttpRequest',
 }
 
 
 export const API: DefaultOptionsType = {
   BAIDU: '//fanyi.baidu.com/v2transapi',
+  YOUDAO: '//fanyi.youdao.com/translate?client=deskdict&keyfrom=chrome.extension&xmlVersion=1.1&dogVersion=1.0&ue=utf8&doctype=xml',
 }
 
 export const DEFAULT_QUERYS: any = {

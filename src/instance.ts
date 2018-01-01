@@ -1,5 +1,5 @@
 import { EventHub } from './pool/event'
-import { toEnglish } from './core/translator'
+import { toEnglish, toEnglishV2 } from './core/translator'
 import { TranslateCache, TranslatorEvent } from './typings/touch-dog'
 import { baiduToken } from './core/token'
 
@@ -23,11 +23,12 @@ export class Touch {
     if (this.cache.source === text) {
       return this.hub.dispath('showCard', this.cache.target)
     }
-    if (!this.cache.token) await this.updateToken()
-  
-    const { token, gtk } = this.cache
-    const response: any = await toEnglish(text, token, gtk)
-    const next: TranslatorEvent = Object.assign({}, transEevent, response)
+    
+    // if (!this.cache.token) await this.updateToken()
+    // const { token, gtk } = this.cache
+    // const response: any = await toEnglish(text, token, gtk)
+    const ch: string = await toEnglishV2(text)
+    const next: TranslatorEvent = Object.assign({}, transEevent, { text: ch })
     this.updateCache({ source: text, target: next })
     
     // show tooltip

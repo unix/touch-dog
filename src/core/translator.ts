@@ -31,6 +31,24 @@ export const toEnglish = async(text: string, token: string, gtk: string): Promis
     console.log(`Translation Error: ${e}`)
     return ErrorTips.translationError
   }
-  
 }
+
+export const toEnglishV2 = async(text: string): Promise<string> => {
+  try {
+    const reg = /\<translation\>\s+\<\!\[CDATA\[([\s+\S+]*)\]\]/
+    const url = `${API.YOUDAO}&i=${text}`
+    const result: string = await $fetch(url, {}, 'text')
+    if (!result) return ErrorTips.translationError
+    console.log(result, result.match(reg))
+    const [, ch] = result.match(reg)
+    if (!ch) return ErrorTips.translationInterruption
+    return ch
+  } catch (e) {
+    console.log(`Translation Error: ${e}`)
+    return ErrorTips.translationError
+  }
+}
+
+
+
 
