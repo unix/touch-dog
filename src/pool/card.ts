@@ -9,6 +9,9 @@ export class Card {
   
   static makeTemplate(trans?: TranslatorEvent): string {
     if (!trans) return '<p></p>'
+    trans.text = trans.text
+      .replace(/\s{2,}/g, '<br/>')
+      .replace(/�/g, '')
     const title: string = `<p class="-touch-dog-title">${trans.text}</p>`
     const parts = trans.parts || []
     const list: string = parts.map(part =>

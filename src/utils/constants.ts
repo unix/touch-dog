@@ -9,12 +9,15 @@ export const DEFAILT_REQUEST_OPTIONS: DefaultOptionsType = {
 export const DEFAILT_HEADERS: DefaultOptionsType = {
   'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
   'Accept': '*/*',
+  'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7',
+  'Accept-Encoding': 'gzip, deflate',
   'X-Requested-With': 'XMLHttpRequest',
 }
 
 
 export const API: DefaultOptionsType = {
   BAIDU: '//fanyi.baidu.com/v2transapi',
+  YOUDAO: '//fanyi.youdao.com/translate?client=deskdict&keyfrom=chrome.extension&xmlVersion=1.1&dogVersion=1.0&ue=utf8&doctype=xml',
 }
 
 export const DEFAULT_QUERYS: any = {
@@ -22,7 +25,7 @@ export const DEFAULT_QUERYS: any = {
     from: 'en',
     to: 'zh',
     query: '',
-    transtype: 'realtime',
+    transtype: 'translang',
     simple_means_flag: 3,
   },
 }
@@ -30,6 +33,7 @@ export const DEFAULT_QUERYS: any = {
 export const ErrorTips: DefaultOptionsType = {
   translationError: '翻译出现了错误',
   translationInterruption: '未找到合适的翻译',
+  tokenError: '查找鉴权信息失败',
 }
 
 export const LOGO: string = `
@@ -40,7 +44,7 @@ export const STYLES: string = `
 .-touch-dog {
   width: 330px;
   height: auto;
-  min-height: 100px;
+  min-height: 90px;
   background: #F6F9FB;
   padding: 0px 15px 28px;
   border-radius: 2px;
@@ -88,9 +92,6 @@ export const STYLES: string = `
 .-touch-dog-list li span {
   padding-right: 5px;
 }
-
-
-
 
 
 

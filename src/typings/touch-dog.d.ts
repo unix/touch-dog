@@ -20,5 +20,7 @@ export type TranslatorEvent = {
 
 export type TranslateCache = {
   source?: string,
-  target?: any
+  target?: any,
+  token?: string,
+  gtk?: string,
 }
