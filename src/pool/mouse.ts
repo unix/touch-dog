@@ -2,31 +2,31 @@ import { findSelectdText } from '../utils/page'
 import { EventHub } from './event'
 
 export class MouseHub {
-  
+
   private text: string = ''
   private eventHub: EventHub
   private touchStatus: string = 'select'       // 'close', 'select', 'zone'
-  
+
   static strFilter(text: string): string {
     const str = text.trim()
-    // reject chinese
-    return /[\u4e00-\u9fa5]/.test(str) ? '' : str
+    // ignore char except alphabet hyphen and blank
+    return /[^A-Za-z\s-]/.test(str) ? '' : str
   }
-  
+
   constructor(eventHub: EventHub, defaultTouchStatus: string) {
     this.touchStatus = defaultTouchStatus
     this.eventHub = eventHub
     this.init()
     this.listenRuntime()
   }
-  
+
   private listenRuntime(): void {
     chrome.runtime.onMessage.addListener(({ touchStatus }) => {
       if (!touchStatus) return
       this.touchStatus = touchStatus
     })
   }
-  
+
   private init(): void {
     const handle: EventListener = (e: MouseEvent) => {
       this.updateText(findSelectdText(), { x: e.clientX, y: e.clientY })
@@ -45,16 +45,14 @@ export class MouseHub {
       this.touchStatus = 'select'
       document.addEventListener('keyup', handle)
     })
-    
+
   }
-  
+
   private updateText(text?: string, position?: any): void {
     const str = MouseHub.strFilter(text)
     if (!str) return
     this.text = str
     this.eventHub.dispath('updateText', { text: str, position })
   }
-  
+
 }
-
-
