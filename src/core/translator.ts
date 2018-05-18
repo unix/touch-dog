@@ -35,13 +35,15 @@ export const toEnglish = async(text: string, token: string, gtk: string): Promis
 
 export const toEnglishV2 = async(text: string): Promise<string> => {
   try {
-    const reg = /\<translation\>\s+\<\!\[CDATA\[([\s+\S+]*)\]\]/
-    const url = `${API.YOUDAO}&i=${encodeURI(text)}`
-    const result: string = await $fetch(url, {}, 'text')
-    if (!result) return ErrorTips.translationError
-    
-    const [, ch] = result.match(reg)
+    const reg: RegExp = /\<translation\>\<content\>\<\!\[CDATA\[([\s+\S+]*)\]\]/
+    const others: string = ']]><\/content>'
+    const url = `${API.PROXY}?dict=${encodeURI(text)}`
+    const { message } = await $fetch(url, {})
+    if (!message) return ErrorTips.translationError
+    let [, ch] = message.match(reg)
     if (!ch) return ErrorTips.translationInterruption
+  
+    if (ch.includes(others)) ch = ch.split(others)[0]
     return ch
   } catch (e) {
     console.log(`Translation Error: ${e}`)

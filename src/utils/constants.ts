@@ -16,8 +16,10 @@ export const DEFAILT_HEADERS: DefaultOptionsType = {
 
 
 export const API: DefaultOptionsType = {
+  PROXY: '//service-witt.herokuapp.com/api/v1/translate.json',
   BAIDU: '//fanyi.baidu.com/v2transapi',
-  YOUDAO: '//fanyi.youdao.com/translate?client=deskdict&keyfrom=chrome.extension&xmlVersion=1.1&dogVersion=1.0&ue=utf8&doctype=xml',
+  YOUDAO: '//dict.youdao.com/translate?client=deskdict&' +
+  'keyfrom=chrome.extension&xmlVersion=3.2&dogVersion=1.0&ue=utf8&doctype=xml&pos=-1',
 }
 
 export const DEFAULT_QUERYS: any = {
