@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack --config ./build/webpack.config.js --progress --watch",
-    "build": "rm -rf ./dist && webpack --config ./build/webpack.config.js --progress",
-    "commit": "node_modules/commitizen/bin/commitizen init cz-conventional-changelog --save --save-exact"
+    "build": "rm -rf ./dist && webpack --config ./build/webpack.config.js --progress"
   },
   "repository": {
     "type": "git",
