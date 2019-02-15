@@ -7,29 +7,15 @@ export const DEFAILT_REQUEST_OPTIONS: DefaultOptionsType = {
 }
 
 export const DEFAILT_HEADERS: DefaultOptionsType = {
-  'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+  'Content-Type': 'application/json',
   'Accept': '*/*',
   'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7',
   'Accept-Encoding': 'gzip, deflate',
-  'X-Requested-With': 'XMLHttpRequest',
 }
 
 
 export const API: DefaultOptionsType = {
-  PROXY: '//service-witt.herokuapp.com/api/v1/translate.json',
-  BAIDU: '//fanyi.baidu.com/v2transapi',
-  YOUDAO: '//dict.youdao.com/translate?client=deskdict&' +
-  'keyfrom=chrome.extension&xmlVersion=3.2&dogVersion=1.0&ue=utf8&doctype=xml&pos=-1',
-}
-
-export const DEFAULT_QUERYS: any = {
-  BAIDU: {
-    from: 'en',
-    to: 'zh',
-    query: '',
-    transtype: 'translang',
-    simple_means_flag: 3,
-  },
+  PROXY: '//touch-dog.now.sh/translate',
 }
 
 export const ErrorTips: DefaultOptionsType = {
