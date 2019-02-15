@@ -2,7 +2,7 @@
 language: node_js
 
 node_js:
-  - 8.6.0
+  - 10.0.0
 
 branches:
   only:
@@ -11,9 +11,8 @@ branches:
 before_install: git fetch --depth=1000
 
 install:
-  - npm i -g typescript webpack
   - npm i
 
 script:
-  - /bin/bash build/lint-commits.sh
+  - commitlint-travis
   - npm run build
