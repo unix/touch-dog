@@ -8,11 +8,8 @@ branches:
   only:
     - master
 
-before_install: git fetch --depth=1000
-
 install:
   - npm i
 
 script:
-  - commitlint-travis
   - npm run build

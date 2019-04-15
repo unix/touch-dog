@@ -1,5 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
 const webpackMerge = require('webpack-merge')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -13,25 +12,29 @@ module.exports = (async() => {
       path: path.resolve(__dirname, '../dist'),
       filename: '[name].js',
     },
-  
+    
+    optimization: {
+      minimize: true,
+    },
+    
     devtool: isDebug ? 'source-map' : '',
-  
+    
     target: 'web',
-  
+    
     node: {
       __dirname: false,
       __filename: true,
     },
-  
+    
     resolve: {
-      extensions: [ '.ts', '.js'],
+      extensions: ['.ts', '.js'],
       modules: [
         path.join(__dirname, '../node_modules'),
       ],
     },
-  
+    
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.ts/,
           enforce: 'pre',
@@ -47,7 +50,7 @@ module.exports = (async() => {
           exclude: /node_modules/,
           options: {
             configFile: path.resolve(__dirname, '../tsconfig.json'),
-          }
+          },
         },
         {
           test: /\.html$/,
@@ -55,34 +58,30 @@ module.exports = (async() => {
         },
         {
           test: /\.css$/,
-          loader: 'css-loader'
+          loader: 'css-loader',
         },
       ],
     },
-  
+    
     plugins: [
-      new webpack.optimize.UglifyJsPlugin({
-        compress: { warnings: false },
-      }),
-  
       new CopyWebpackPlugin([{
         from: path.resolve(__dirname, '../manifest.json'),
         to: path.resolve(__dirname, '../dist/manifest.json'),
         force: true,
         toType: 'file',
-        ignore: ['.*']
+        ignore: ['.*'],
       }, {
         from: path.resolve(__dirname, '../assets'),
         to: path.resolve(__dirname, '../dist/assets'),
         force: true,
         toType: 'dir',
-        ignore: ['.*']
+        ignore: ['.*'],
       }, {
         from: path.resolve(__dirname, '../src/_locales'),
         to: path.resolve(__dirname, '../dist/_locales'),
         force: true,
         toType: 'dir',
-        ignore: ['.*']
+        ignore: ['.*'],
       }]),
     ],
   }

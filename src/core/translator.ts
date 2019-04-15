@@ -8,7 +8,7 @@ export const toEnglish = async(text: string): Promise<string> => {
     body: JSON.stringify({
       text: text,
       from: 'en', to: 'zh',
-    })
+    }),
   })
   if (!result || !result.trans_result || !result.trans_result.length)
     return ErrorTips.translationError
