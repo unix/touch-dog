@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DhyanaChina/touch-dog.git"
+    "url": "git+https://github.com/unix/touch-dog.git"
   },
   "files": [
     "dist"
   ],
   "bugs": {
-    "url": "https://github.com/DhyanaChina/touch-dog/issues"
+    "url": "https://github.com/unix/touch-dog/issues"
   },
-  "author": "DhyanaChina",
+  "author": "unix",
   "license": "MIT",
   "icons": {
     "48": "images/icon_48.png"

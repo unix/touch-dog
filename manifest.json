@@ -5,8 +5,8 @@
   "version": "1.1.0",
   "description": "一个快速优雅的网页划词翻译工具，准确实时的翻译选中文字。",
   "default_locale": "en",
-  "author": "WittBulter",
-  "homepage_url": "https://github.com/DhyanaChina/touch-dog",
+  "author": "unix <lambdas.dev@gmail.com>",
+  "homepage_url": "https://github.com/unix/touch-dog",
   "icons": {
     "48": "assets/images/dog_38.png"
   },

@@ -1,5 +1,5 @@
 <p align="center" height="300">
-<img src="https://github.com/DhyanaChina/touch-dog/blob/master/.github/logo.png" align="center">
+<img src="https://github.com/unix/touch-dog/blob/master/.github/logo.png" align="center">
 </p>
 
 
@@ -17,7 +17,7 @@
 
 ### 相关
 你可以在 [Chrome 应用商店](https://chrome.google.com/webstore/detail/touch-dog/lljkppflllhlognbihihaldfcbbelfbh) 下载此插件。    
-如果你有更好的想法或其他需求，可以通过 [ISSUE](https://github.com/DhyanaChina/touch-dog/issues/new) 提交给我。
+如果你有更好的想法或其他需求，可以通过 [ISSUE](https://github.com/unix/touch-dog/issues/new) 提交给我。
 
 
 ### 预览
