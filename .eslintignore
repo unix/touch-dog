@@ -1,0 +1,7 @@
+.github
+.travis.yml
+assets
+build
+dist
+node_modules
+manifest.json

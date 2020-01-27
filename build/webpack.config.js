@@ -2,8 +2,6 @@ const path = require('path')
 const webpackMerge = require('webpack-merge')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const lintConfig = require('../tslint.json')
-const isDebug = process.env.DEBUG || false
 
 module.exports = (async() => {
   
@@ -16,8 +14,6 @@ module.exports = (async() => {
     optimization: {
       minimize: true,
     },
-    
-    devtool: isDebug ? 'source-map' : '',
     
     target: 'web',
     
@@ -35,15 +31,6 @@ module.exports = (async() => {
     
     module: {
       rules: [
-        {
-          test: /\.ts/,
-          enforce: 'pre',
-          exclude: /node_modules/,
-          loader: 'tslint-loader',
-          options: {
-            configuration: lintConfig,
-          },
-        },
         {
           test: /\.ts$/,
           loader: 'ts-loader',
