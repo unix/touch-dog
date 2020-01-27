@@ -11,11 +11,11 @@ Promise<T | any> => {
   const init: RequestInit = makeInit(options)
   return new Promise((resolve, reject) => {
     fetch(url, init)
-    .then(res => {
-      if (res.status === 204) return resolve({})
-      return res[filterMethod]()
-    })
-    .then(json => resolve(json))
-    .catch(err => reject(err))
+      .then(res => {
+        if (res.status === 204) return resolve({})
+        return res[filterMethod]()
+      })
+      .then(json => resolve(json))
+      .catch(err => reject(err))
   })
 }

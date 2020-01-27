@@ -37,7 +37,7 @@ export class MouseHub {
     document.addEventListener('keydown', (e: KeyboardEvent) => {
       if (this.touchStatus === 'close') return
       if (e.keyCode !== 18 || this.touchStatus !== 'zone') return
-      const handle = (e: KeyboardEvent) => {
+      const handle = (e: KeyboardEvent): void => {
         if (e.keyCode !== 18 && this.touchStatus !== 'select') return
         this.touchStatus = 'zone'
         document.removeEventListener('keyup', handle)

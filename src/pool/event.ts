@@ -1,10 +1,11 @@
 export type EventHubListener = {
-  (evt: Event, detail?: any): void,
+  (evt: Event, detail?: any): void
 }
+
 export type EventRecord = {
-  type: string,
-  handle: EventHubListener,
-  done: EventListener,
+  type: string
+  handle: EventHubListener
+  done: EventListener
 }
 
 export class EventHub {
@@ -26,7 +27,7 @@ export class EventHub {
   }
   
   listen(eventType: string, done: EventHubListener): void {
-    const handle = (e: any) => done(e, e.detail)
+    const handle = (e: any): void => done(e, e.detail)
     const record: EventRecord = this.eventRecords.find(record => {
       return record.type === eventType && record.done === done
     })

@@ -1,4 +1,4 @@
-;(async() => {
+;(async(): Promise<void> => {
   const updateIcon = (status: string): void => {
     const path: string =  `assets/images/${status === 'close' ? 'dog-disabled_38' : 'dog_38'}.png`
     chrome.browserAction.setIcon({ path })
