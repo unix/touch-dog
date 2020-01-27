@@ -8,6 +8,9 @@
     "build": "rm -rf ./dist && webpack --config ./build/webpack.config.js --progress --mode production",
     "lint": "eslint . --ext .js,.ts"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/unix/touch-dog.git"
@@ -33,6 +36,7 @@
     "eslint-config-ts-lambdas": "^1.0.3",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "pre-commit": "^1.2.2",
     "ts-loader": "^5.3.3",
     "typescript": "^3.4.3",
     "webpack": "^4.30.0",
